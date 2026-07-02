@@ -13,6 +13,7 @@ const handleJoinChat = (e) => {
   if (trimmedName === "") return;
 
   localStorage.setItem("username", trimmedName);
+  window.dispatchEvent(new Event("storage"));
   navigate("/chat");
 };
 

@@ -21,7 +21,10 @@ const server = http.createServer(app);
 // Create socket.io server and allow all origins for simplicity
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: [
+  "http://localhost:5173",
+  "https://YOUR-VERCEL-APP.vercel.app"
+],
     methods: ["GET", "POST"],
   },
 });
