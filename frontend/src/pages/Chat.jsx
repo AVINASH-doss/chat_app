@@ -23,6 +23,7 @@ function Chat() {
 
     // Connect the socket only when the Chat page mounts
     socket.connect();
+    socket.emit("userJoined", username);
 
     const handleConnect = () => setConnectionStatus("Connected");
     const handleDisconnect = () => setConnectionStatus("Disconnected");
@@ -59,17 +60,19 @@ function Chat() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("username");
-    socket.disconnect();
-    navigate("/login");
-  };
-
+  socket.disconnect();
+  localStorage.removeItem("username");
+  navigate("/login");
+};
   return (
     <div className="chat-page">
       <ChatHeader onLogout={handleLogout} />
       <ConnectionStatus status={connectionStatus} />
       <MessageList messages={messages} currentUsername={username} />
       <ChatInput onSendMessage={handleSendMessage} />
+      <footer className="chat-footer" style={{ textAlign: "center", marginTop: "20px", color: "#888" }}>
+    ChatConnect © 2026
+</footer>
     </div>
   );
 }

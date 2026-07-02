@@ -18,10 +18,12 @@ const handleJoinChat = (e) => {
 };
 
   return (
-    <div className="login-container">
+    <><div className="login-container">
       <form className="login-box" onSubmit={handleJoinChat}>
-        <h1 className="login-title">Real-Time Chat</h1>
-        <p className="login-subtitle">Enter a username to join the chat</p>
+        <h1 className="login-title">ChatConnect</h1>
+        <p className="login-subtitle">
+          Connect instantly with anyone in real time.
+        </p>
 
         <input
           type="text"
@@ -29,14 +31,15 @@ const handleJoinChat = (e) => {
           placeholder="Enter your username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          autoFocus
-        />
+          autoFocus />
 
         <button type="submit" className="login-button" disabled={username.trim() === ""}>
           Join Chat
         </button>
       </form>
-    </div>
+    </div><footer className="login-footer" style={{ textAlign: "center", marginTop: "20px", color: "#888" }}>
+        Built with React • Node.js • Express • Socket.io
+      </footer></>
   );
 }
 
