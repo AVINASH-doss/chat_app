@@ -6,6 +6,10 @@ A real-time chat application built using React, Node.js, Express, and Socket.io.
 
 https://chat-app-connect-rt.vercel.app
 
+## Demo
+
+https://drive.google.com/drive/folders/1zllKTMNrUVUC6vsqbU8TR_GCg-rvLKoK?usp=sharing
+
 ## Features
 
 - Real-time messaging
